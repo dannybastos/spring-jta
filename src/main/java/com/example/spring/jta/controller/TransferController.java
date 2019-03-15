@@ -24,7 +24,7 @@ public class TransferController {
 			transferService.transfer(fromAccountId, toAccountId, amount);
 			result = ResponseEntity.ok().build();
 		} catch (Exception e) {
-			result = ResponseEntity.status(500).body(e.getMessage());
+			result = ResponseEntity.badRequest().body(e.getMessage());
 		}
 		return result;		
 	}	
